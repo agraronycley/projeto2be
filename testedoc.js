@@ -42,25 +42,25 @@ function getDocuments(folderId){
         if (documentType == DOCUMENT_TYPE_NORMAL) {
         	       
             var docDto = docAPI.newDocumentDto();
-		    var attachArray = new java.util.ArrayList();
-		    var mainAttach = docAPI.newAttachment();
+	    var attachArray = new java.util.ArrayList();
+	    var mainAttach = docAPI.newAttachment();
 
-		    var documentoOrigem = docAPI.copyDocumentToUploadArea(document.getDocumentId(), document.getVersion())[0];
-		  
-		    docDto.setDocumentId(0);
-		    docDto.setDocumentTypeId("");
-		    docDto.setDocumentDescription(documentoOrigem);
-		    docDto.setParentDocumentId(folderId);
-		    docDto.setInheritSecurity(true);
+	    var documentoOrigem = docAPI.copyDocumentToUploadArea(document.getDocumentId(), document.getVersion())[0];
 
-		    mainAttach.setFileName(documentoOrigem);
-		    mainAttach.setPrincipal(true);
-		    mainAttach.setAttach(false);
-		    attachArray.add(mainAttach);
+	    docDto.setDocumentId(0);
+	    docDto.setDocumentTypeId("");
+	    docDto.setDocumentDescription(documentoOrigem);
+	    docDto.setParentDocumentId(folderId);
+	    docDto.setInheritSecurity(true);
 
-		    docAPI.createDocument(docDto, attachArray, null, null, null);
+	    mainAttach.setFileName(documentoOrigem);
+	    mainAttach.setPrincipal(true);
+	    mainAttach.setAttach(false);
+	    attachArray.add(mainAttach);
 
-		    fluigAPI.getDocumentService().deleteDocument(document.getDocumentId());
+	    docAPI.createDocument(docDto, attachArray, null, null, null);
+
+	    fluigAPI.getDocumentService().deleteDocument(document.getDocumentId());
         }
         
     }
