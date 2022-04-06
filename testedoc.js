@@ -7,7 +7,7 @@
 
 function createDataset(fields, constraints, sortFields) {
     
-	//Deve-se passar como parametro o id da da pasta que está no topo da hieraraquia, no caso o ID a pasta 'Documentos de Fornecedores e Clientes'
+    //Deve-se passar como parametro o id da da pasta que está no topo da hieraraquia, no caso o ID a pasta 'Documentos de Fornecedores e Clientes'
     getDocuments(4016658);
     
     return DatasetBuilder.newDataset();
@@ -16,7 +16,7 @@ function createDataset(fields, constraints, sortFields) {
 
 function getDocuments(folderId){
 	
-	// Tipo do documento que define ser uma pasta
+    // Tipo do documento que define ser uma pasta
     var DOCUMENT_TYPE_FOLDER = "1";
 
     // Tipo do documento que define ser um documento normal
